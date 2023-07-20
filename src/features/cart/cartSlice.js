@@ -54,20 +54,21 @@ const cartSlice = createSlice({
       state.total = total;
     },
   },
-  extraReducers: {
-    [getCartItems.pending]: (state) => {
+  extraReducers: (builder) => {
+    builder
+    .addCase(getCartItems.pending, (state) => {
       state.isLoading = true;
-    },
-    [getCartItems.fulfilled]: (state, action) => {
-      console.log(action);
+    })
+    .addCase(getCartItems.fulfilled, (state, action) => {
+      // console.log(action);
       state.isLoading = false;
       state.cartItems = action.payload;
-    },
-    [getCartItems.rejected]: (state) => {
+    })
+    .addCase(getCartItems.rejected, (state, action) => {
       state.isError = true;
       state.errorMsg =  action.payload ;
       state.isLoading = false;
-    },
+    })
   },
 });
 
