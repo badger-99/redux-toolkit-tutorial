@@ -3,7 +3,7 @@ import { CartIcon, Dollar } from '../icons'
 
 
 const Navbar = () => {
-  console.log(useSelector(store=>console.log(store)))
+  // console.log(useSelector(store=>console.log(store)))
   const {amount} = useSelector(store=>store.cart)
   return (
     <nav>

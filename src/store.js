@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import cartReducer from './features/cart/cartSlice';
 
+// 'store' stores the states.
 const store = configureStore({
   reducer: {
     cart: cartReducer,
