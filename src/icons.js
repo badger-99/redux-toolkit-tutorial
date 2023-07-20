@@ -26,6 +26,7 @@ export const ChevronDown = () => {
       viewBox='0 0 24 24'
       stroke='currentColor'
       strokeWidth={2}
+      id='decrease'
     >
       <path strokeLinecap='round' strokeLinejoin='round' d='M19 9l-7 7-7-7' />
     </svg>
@@ -41,6 +42,7 @@ export const ChevronUp = () => {
       viewBox='0 0 24 24'
       stroke='currentColor'
       strokeWidth={2}
+      id="increase"
     >
       <path strokeLinecap='round' strokeLinejoin='round' d='M5 15l7-7 7 7' />
     </svg>
