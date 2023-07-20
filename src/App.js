@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import Modal from './components/Modal';
 
 function App() {
-  const { cartItems, isLoading, isError } = useSelector((store) => store.cart);
+  const { cartItems, isLoading, isError, errorMsg } = useSelector((store) => store.cart);
   const { isOpen } = useSelector((store) => store.modal);
   const dispatch = useDispatch();
 
@@ -27,7 +27,7 @@ function App() {
   if (isError) {
     return (
       <div className='loading'>
-        <h1>There was a network error</h1>
+        <h1>{ errorMsg}</h1>
       </div>
     );
   }
