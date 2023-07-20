@@ -18,12 +18,21 @@ const cartSlice = createSlice({
     removeItem: (store, action) => {
       const itemID = action.payload
       store.cartItems = store.cartItems.filter((item) => item.id !== itemID);
+    },
+    toggleAmount: (store, { payload }) => {
+      const cartItem = store.cartItems.find((item) => item.id === payload.id)
+      if (payload.operation === 'increase') {
+        cartItem.amount = cartItem.amount+1
+      }
+      if (payload.operation === 'decrease') {
+        cartItem.amount = cartItem.amount-1;
+      }
     }
   }
 });
 
-console.log(cartSlice)
+// console.log(cartSlice)
 
-export const{clearCart, removeItem} = cartSlice.actions
+export const { clearCart, removeItem, toggleAmount } = cartSlice.actions;
 
 export default cartSlice.reducer //if you log cartSlice, you'll notice  reducer is one of it's properties. we want to export the reducer specifically.
